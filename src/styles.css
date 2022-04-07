@@ -35,6 +35,10 @@ h5 {
   padding-inline-start: 20px;
 }
 
+li:first-letter {
+  text-transform: capitalize;
+}
+
 .units {
   display: inline-block;
   position: relative;
