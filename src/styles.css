@@ -110,12 +110,12 @@ form {
   border-color: #3b185f;
 }
 
-.icon-current {
+/* .icon-current {
   font-size: 8em;
   color: #1e5a74;
-  /* padding-bottom: 0.2em; */
+  padding-bottom: 0.2em;
   padding-bottom: 1.25rem;
-}
+ } */
 
 .data {
   text-align: justify;
