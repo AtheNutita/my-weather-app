@@ -52,19 +52,21 @@ li:first-letter {
   line-height: 1.8rem;
   font-weight: 450;
   font-size: 1em;
-}
-
-.units a,
-.units {
   color: #57238b;
 }
 
-.units a:focus {
+.units a {
   color: #fed28a;
+  text-decoration: none;
 }
 
 .units a:hover {
   color: #1e5a74;
+}
+
+.units .active {
+  color: #57238b;
+  cursor: default;
 }
 
 .all {

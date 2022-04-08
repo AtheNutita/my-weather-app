@@ -22,16 +22,15 @@ function formatDate(timestamp) {
 }
 
 function displayWeatherCondition(response) {
-  console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#date").innerHTML = formatDate(
     response.data.dt * 1000
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
-  document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  celsiusTemperature = response.data.main.temp;
+  document.querySelector("#temperature").innerHTML =
+    Math.round(celsiusTemperature);
   document
     .querySelector("#icon")
     .setAttribute(
@@ -82,16 +81,26 @@ currentLocationButton.addEventListener("click", function (event) {
   navigator.geolocation.getCurrentPosition(getGeo);
 });
 
-searchCity("Santiago");
+let celsiusTemperature = null;
 
-// link units
-// let celsius = document.querySelector("#celsius-link");
-// let fahrenheit = document.querySelector("#fahrenheit-link");
-// fahrenheit.addEventListener("click", function (event) {
-//   event.preventDefault();
-//   h2.innerHTML = 44;
-// });
-// celsius.addEventListener("click", function (event) {
-//   event.preventDefault();
-//   h2.innerHTML = 7;
-// });
+let celsius = document.querySelector("#celsius-link");
+let fahrenheit = document.querySelector("#fahrenheit-link");
+
+fahrenheit.addEventListener("click", function (event) {
+  event.preventDefault();
+  celsius.classList.remove("active");
+  fahrenheit.classList.add("active");
+  document.querySelector("#temperature").innerHTML = Math.round(
+    (celsiusTemperature * 9) / 5 + 32
+  );
+});
+
+celsius.addEventListener("click", function (event) {
+  event.preventDefault();
+  celsius.classList.add("active");
+  fahrenheit.classList.remove("active");
+  document.querySelector("#temperature").innerHTML =
+    Math.round(celsiusTemperature);
+});
+
+searchCity("Santiago");
