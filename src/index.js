@@ -21,6 +21,33 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+
+  let forecastHTML = `<div class="row row-cols-1 row-cols-sm-5 g-4">`;
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-12 m-0">
+                <div class="card h-100 week">
+                  <div class="card-body">
+                    <h5 class="card-title forecast-date"> ${day} </h5>
+                    <i class="fas fa-cloud-sun icon-week"></i>
+
+                    <div class="card-text forecast-temperatures">
+                      <span class="forecast-temperature-max">10°</span> |
+                      <span class="forecast-temperature-min"> 6°</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+    `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  document.querySelector("#forecast").innerHTML = forecastHTML;
+}
+
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#date").innerHTML = formatDate(
@@ -104,3 +131,4 @@ celsius.addEventListener("click", function (event) {
 });
 
 searchCity("Santiago");
+displayForecast();
