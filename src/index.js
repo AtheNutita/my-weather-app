@@ -21,7 +21,9 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
+
   let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
 
   let forecastHTML = `<div class="row row-cols-1 row-cols-sm-5 g-4">`;
@@ -46,6 +48,12 @@ function displayForecast() {
   });
   forecastHTML = forecastHTML + `</div>`;
   document.querySelector("#forecast").innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "e6c27d9409e30f0d97ca8add17211fd2";
+  apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function displayWeatherCondition(response) {
@@ -75,6 +83,8 @@ function displayWeatherCondition(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+
+  getForecast(response.data.coord);
 }
 
 function searchCity(city) {
@@ -131,4 +141,3 @@ celsius.addEventListener("click", function (event) {
 });
 
 searchCity("Santiago");
-displayForecast();
