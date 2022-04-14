@@ -10,10 +10,6 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <script
-      src="https://kit.fontawesome.com/225c5b53e0.js"
-      crossorigin="anonymous"
-    ></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -33,7 +29,7 @@
   </head>
 
   <body>
-    <div class="container">
+    <div class="container d-flex flex-column">
       <div class="card all">
         <div class="card-body">
           <div class="row">
@@ -44,25 +40,10 @@
                 <li id="date"></li>
                 <li id="description"></li>
               </ul>
-
-              <h2 id="temperature"></h2>
-
-              <span class="units">
-                <a href="#" id="celsius-link" class="active">°C</a> |
-                <a href="#" id="fahrenheit-link">°F</a>
-              </span>
             </div>
 
             <div class="col">
-              <div class="today-position">
-                <img src="" alt="" id="icon" />
-                <!-- <i class="fas fa-cloud-sun icon-current"></i> -->
-
-                <ul class="data">
-                  <li>Humidity: <span id="humidity"></span>%</li>
-                  <li>Wind: <span id="wind"></span> km/h</li>
-                </ul>
-              </div>
+              <img src="" alt="" id="icon" class="icon-current" />
             </div>
 
             <div class="col">
@@ -90,11 +71,29 @@
             </div>
           </div>
 
+          <div class="row">
+            <div class="col">
+              <h2 id="temperature"></h2>
+
+              <span class="units">
+                <a href="#" id="celsius-link" class="active">°C</a> |
+                <a href="#" id="fahrenheit-link">°F</a>
+              </span>
+            </div>
+            <div class="col">
+              <ul class="data">
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind: <span id="wind"></span> km/h</li>
+              </ul>
+            </div>
+            <div class="col"></div>
+          </div>
+
           <div class="weather-forecast" id="forecast"></div>
         </div>
       </div>
 
-      <small>
+      <small class="mx-auto">
         <a
           href="https://github.com/AtheNutita/my-weather-app"
           target="_blank"

@@ -1,7 +1,3 @@
-.container {
-  max-width: 1000px;
-}
-
 h1,
 h2 {
   margin: 20px;
@@ -13,18 +9,44 @@ h2 {
 
 h1 {
   font-size: 2.7em;
-  /* padding-bottom: 0.5em; or 0.2 */
 }
 
 h2 {
   font-size: 5em;
-
-  /* padding-bottom: 1.25rem; */
-  /* padding: 0.2em; */
 }
 
 h5 {
   color: #57238b;
+}
+
+form {
+  display: -webkit-inline-flex;
+}
+
+small {
+  color: #57238b;
+}
+
+small a {
+  text-decoration: none;
+  color: #fed28a;
+}
+
+small a:hover {
+  color: #1e5a74;
+}
+
+li:first-letter {
+  text-transform: capitalize;
+}
+
+.all {
+  width: fit-content;
+  display: block;
+  margin: 2em auto 0.5em auto;
+  font-family: "Noto Sans Mono", monospace;
+  background-color: #cbbded;
+  border: 0.3rem solid #fed28a;
 }
 
 .today {
@@ -38,17 +60,12 @@ h5 {
   padding-bottom: 1.25rem;
 }
 
-li:first-letter {
-  text-transform: capitalize;
-}
-
 .units {
   display: inline-block;
   position: relative;
   top: -85px;
   left: 140px;
   margin-top: 10px;
-  /* padding: 0.2em; */
   line-height: 1.8rem;
   font-weight: 450;
   font-size: 1em;
@@ -67,19 +84,6 @@ li:first-letter {
 .units .active {
   color: #57238b;
   cursor: default;
-}
-
-.all {
-  width: fit-content;
-  display: block;
-  margin: 2em auto 0.5em auto;
-  font-family: "Noto Sans Mono", monospace;
-  background-color: #cbbded;
-  border: 0.3rem solid #fed28a;
-}
-
-form {
-  display: -webkit-inline-flex;
 }
 
 .input-group {
@@ -112,12 +116,11 @@ form {
   border-color: #3b185f;
 }
 
-/* .icon-current {
-  font-size: 8em;
-  color: #1e5a74;
-  padding-bottom: 0.2em;
-  padding-bottom: 1.25rem;
- } */
+.icon-current {
+  display: block;
+  margin: 0 auto;
+  padding-top: 3rem;
+}
 
 .data {
   text-align: justify;
@@ -127,11 +130,6 @@ form {
   font-weight: 400;
   color: #57238b;
   list-style: circle;
-}
-
-.today-position {
-  width: fit-content;
-  margin: 20px;
 }
 
 .week {
@@ -144,7 +142,6 @@ form {
 .icon-week {
   display: block;
   font-size: 4em;
-  color: #1e5a74;
 }
 
 .forecast-temperatures {
@@ -152,8 +149,4 @@ form {
   line-height: 1.8rem;
   font-weight: 350;
   color: #57238b;
-}
-
-small {
-  color: #1e5a74;
 }
